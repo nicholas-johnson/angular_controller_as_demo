@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scope</title>
+    <script src='angular.js'></script>
+    <script src='demo.js'></script>
+  </head>
+  <body ng-app="app" ng-controller="myController">
+
+    <input ng-model='name' />
+    <div>{{name}}</div>
+
+    <button ng-click="sayHello()">Hello</button>
+    {{greeting}}
+
+  </body>
+</html>

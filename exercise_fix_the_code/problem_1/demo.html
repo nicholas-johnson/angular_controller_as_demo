@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scope</title>
+    <script src="angular.js"></script>
+    <script src="demo.js"></script>
+    <style>
+      div {border:1px solid grey; padding:1em; margin:1em;}
+      h1, input {
+        font-size:50px;
+        font-weight:normal;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body ng-app="app">
+
+    <div ng-controller="profileController">
+      <h1>
+        <span ng-if="editable">
+          <input ng-model="firstName" />
+        </span>
+        <span ng-if="!editable">
+          {{firstName}}
+        </span>
+        <a href="" ng-click="editable = !editable" ng-bind="editable ? 'done' : 'edit'"></a>
+      </h1>
+    </div>
+
+  </body>
+</html>

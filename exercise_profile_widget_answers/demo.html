@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Templates</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        letter-spacing:0.05em;
+      }
+      .profile, form {
+        width:200px;
+        float:left;
+        border:1px solid grey;
+        padding:10px;
+        margin:10px;
+      }
+      fieldset {
+        border:none;
+      }
+      .profile h1 {
+        margin-top:0;
+      }
+    </style>
+  </head>
+  <body ng-app="app">
+
+    <div ng-controller="ProfileController as vm">
+
+      <div class="profile">
+        <h1>{{vm.name}}</h1>
+        <img ng-src="{{vm.url}}" alt="{{vm.name}}" />
+        <div>
+          <label for="edit">Edit</label>
+          <input id="edit" type="checkbox" ng-model="vm.edit" />
+        </div>
+      </div>
+
+      <form ng-show="vm.edit">
+        <fieldset>
+          <label>Enter your name</label>
+          <input ng-model="vm.name" />
+        </fieldset>
+        <fieldset>
+          <label>Profile Image URL</label>
+          <input ng-model="vm.url" />
+        </fieldset>
+      </form>
+
+    </div>
+
+  </body>
+</html>
